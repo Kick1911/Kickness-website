@@ -1,28 +1,51 @@
 <template>
-  <div id="main">
-    <h1>I am Kick</h1>
-  </div>
+    <div id="main">
+        <Nav />
+        <Cover />
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8">
+              <Page />
+            </div>
+            <div class="col-sm-4">
+              <p>Placeholder</p>
+            </div>
+          </div>
+      </div>
+    </div>
 </template>
 
 <script>
+import Cover from './Cover'
+import Nav from './Nav'
+import Page from './Page'
+import pages from '../data/pages'
+
 export default {
-  name: 'Main'
+  name: 'Main',
+  data () {
+    return {
+      page: pages[0],
+      nav: pages
+    }
+  },
+  computed: {
+    centerPanel (event) {
+      return import('./' + this.$data.center_panel)
+    }
+  },
+  components: {
+    Page,
+    Cover,
+    Nav
+  }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="less">
-#main{
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  background-color: rgba(0,0,0,0.5);
-  h1{
-    margin-top:15%;
+<style lang="less" scoped>
+#main {
+  .container {
+    margin-top: 4rem;
   }
 }
 </style>
