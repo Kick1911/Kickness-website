@@ -1,9 +1,9 @@
 <template>
     <div id="nav">
         <ul>
-            <li v-for="item in this.$parent.nav"
-                v-bind:key="item.id"
-                v-on:click="selectTab">
+            <li v-for="item in this.$props.items"
+                :key="item.id"
+                v-on:click="onclick($parent, item.content)">
                 <a>{{ item.title }}</a>
             </li>
         </ul>
@@ -14,11 +14,7 @@
 
 export default {
   name: 'Nav',
-  methods: {
-    selectTab (event) {
-      this.$parent.page = this.data
-    }
-  }
+  props: ['items', 'onclick']
 }
 </script>
 

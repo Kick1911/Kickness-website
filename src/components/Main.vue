@@ -1,11 +1,11 @@
 <template>
     <div id="main">
-        <Nav />
+        <Nav :items="nav" :onclick="$getPage" />
         <Cover />
         <div class="container">
           <div class="row">
             <div class="col-sm-8">
-              <Page />
+              <Page :data="app.page" />
             </div>
             <div class="col-sm-4">
               <p>Placeholder</p>
@@ -23,15 +23,10 @@ import pages from '../data/pages'
 
 export default {
   name: 'Main',
+  props: ['app'],
   data () {
     return {
-      page: pages[0],
       nav: pages
-    }
-  },
-  computed: {
-    centerPanel (event) {
-      return import('./' + this.$data.center_panel)
     }
   },
   components: {

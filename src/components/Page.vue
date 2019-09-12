@@ -1,28 +1,21 @@
 <template>
     <div id="page">
         <div class="card">
-            <h4 class="card-title">{{ page.title }}</h4>
-            <p class="card-text">{{ get_content }}</p>
+          <div v-if="this.data">
+            <h4 class="card-title">{{ data.title }}</h4>
+            <p class="card-text">{{ data.body }}</p>
+          </div>
+          <div v-else>
+            <h1>Still a WIP</h1>
+          </div>
         </div>
     </div>
 </template>
 
 <script>
-import YAML from 'yaml'
 
 export default {
   name: 'Page',
-  data () {
-    return {
-      page: this.$parent.page
-    }
-  },
-  computed: {
-    get_content () {
-      this.axios.get('/assets/home.yaml').then(res => {
-        return res.data
-      })
-    }
-  }
+  props: ['data']
 }
 </script>
