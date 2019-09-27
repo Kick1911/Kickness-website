@@ -20,20 +20,15 @@ export default {
 
 <style lang="less" scoped>
 #nav{
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 50px;
-    background-color: black;
-    z-index: 2;
+    height: 6%;
     ul{
-        background-color: #333;
         overflow: hidden;
         list-style-type: none;
         li{
             float: left;
-            color: #f2f2f2;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
