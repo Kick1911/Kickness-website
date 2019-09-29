@@ -1,10 +1,7 @@
 <template>
     <div id="page">
       <div v-if="this.data">
-        <div>
-          <h4>{{ data.title }}</h4>
-          <p>{{ data.body }}</p>
-        </div>
+        <component :is="data.header.template">{{data.body}}</component>
       </div>
       <div v-else>
         <h1>Still a WIP</h1>
@@ -13,21 +10,31 @@
 </template>
 
 <script>
+import Article from './Page/Article'
 
 export default {
   name: 'Page',
-  props: ['data']
+  props: ['data'],
+  components: {
+    Article
+  },
+  watch: {
+    data: function (val) {
+      let buffer = ''
+      const style = val.header.style
+      for(const k in style){
+        buffer += k + ':' + style[k] + ';'
+      }
+      this.$el.style = buffer
+    }
+  }
 }
 </script>
 
 <style lang="less" scoped>
 #page{
   & > div {
-    text-align: center;
     height: 100%;
-    & > * {
-      margin-top: 50%;
-    }
   }
 }
 </style>

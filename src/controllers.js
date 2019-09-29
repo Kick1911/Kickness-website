@@ -6,9 +6,11 @@ export default {
   install (Vue, options) {
     Vue.prototype.$getPage = (parent, page) => {
       console.log('Getting new Page:', page)
-      Vue.axios.get(`/${page}.yaml`).then(res => {
-        const doc = YAML.parseDocument(res.data).toJSON()
-        parent.$emit('updateAppData', { page: { title: doc.title[0], body: doc.body[0] } })
+      Vue.axios.get(`/content/${page}.md`).then(res => {
+        const docs = YAML.parseAllDocuments(res.data)
+        const header = docs[0].toJSON()
+        const body = docs[1].toString() && docs[1].toString().replace('---', '')
+        parent.$emit('updateAppData', { page: { header: header, body: body } })
       })
     }
   }

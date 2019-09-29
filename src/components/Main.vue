@@ -4,10 +4,10 @@
             :items="nav" :onclick="$getPage" />
         <div class="flex board">
           <div class="sidebar">
-            <Page :data="app.page" />
+            <NavList :data="nav" :onclick="$getPage" />
           </div>
           <div class="content">
-            <p>Placeholder</p>
+            <Page :data="app.page" />
           </div>
       </div>
     </div>
@@ -16,6 +16,7 @@
 <script>
 import Nav from './Nav'
 import Page from './Page'
+import NavList from './NavList'
 import pages from '../data/pages'
 
 export default {
@@ -28,6 +29,7 @@ export default {
   },
   components: {
     Page,
+    NavList,
     Nav
   }
 }
@@ -51,18 +53,21 @@ export default {
   }
 
   .nav {
-    box-shadow: 0px 3px 6px -2px #ccc;
+    box-shadow: 0px 2px 7px -2px #ccc;
   }
 
   .flex {
     display: flex;
     flex-wrap: wrap;
     .sidebar {
-      width:40%;
-      box-shadow: 3px 3px 6px -2px #ccc;
+      width: 39%;
+      margin-right: 1%;
+      box-shadow: 6px -5px 10px -8px #ccc;
     }
     .content {
-      width: 60%;
+      width: 56%;
+      padding: 2%;
+      box-shadow: -7px -5px 10px -8px #ccc;
     }
   }
 }
