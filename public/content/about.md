@@ -9,7 +9,7 @@ This website serves as my personal profile and the website for the kickness proj
 
 ![Vue](favicon.ico)
 
-``` javascript
+``` js
 
 var foo = function (bar) {
   return bar++;

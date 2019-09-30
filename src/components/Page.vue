@@ -21,8 +21,8 @@ export default {
   watch: {
     data: function (val) {
       let buffer = ''
-      const style = val.header.style
-      for(const k in style){
+      const style = val.header.style || {}
+      for (const k in style) {
         buffer += k + ':' + style[k] + ';'
       }
       this.$el.style = buffer

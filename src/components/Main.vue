@@ -4,7 +4,7 @@
             :items="nav" :onclick="$getPage" />
         <div class="flex board">
           <div class="sidebar">
-            <NavList :data="nav" :onclick="$getPage" />
+            <NavList :items="nav" :onclick="$getPage" />
           </div>
           <div class="content">
             <Page :data="app.page" />

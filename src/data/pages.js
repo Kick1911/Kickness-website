@@ -8,8 +8,8 @@ export default [
     content: 'profile'
   },
   {
-    title: 'Vision',
-    content: 'vision'
+    title: 'The Kickness Project',
+    content: 'blog/kickness'
   },
   {
     title: 'About',

@@ -8,7 +8,7 @@ export default {
       console.log('Getting new Page:', page)
       Vue.axios.get(`/content/${page}.md`).then(res => {
         const docs = YAML.parseAllDocuments(res.data)
-        const header = docs[0].toJSON()
+        const header = docs[0].toJSON() || {}
         const body = docs[1].toString() && docs[1].toString().replace('---', '')
         parent.$emit('updateAppData', { page: { header: header, body: body } })
       })

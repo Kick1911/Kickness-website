@@ -1,7 +1,7 @@
 <template>
     <div id='navlist'>
         <ul>
-            <li v-for="item in this.$props.data"
+            <li v-for="item in this.$props.items"
                 :key="item.id"
                 v-on:click="onclick($parent, item.content)">
                 <a>{{ item.title }}</a>
@@ -13,7 +13,7 @@
 <script>
 export default {
   name: 'navlist',
-  props: ['data']
+  props: ['items', 'onclick']
 }
 </script>
 
