@@ -1,6 +1,6 @@
 <template>
     <div>
-      <vue-markdown><slot /></vue-markdown>
+      <vue-markdown :source="$slots.default[0].text" />
     </div>
 </template>
 

@@ -7,10 +7,12 @@ export default {
     Vue.prototype.$getPage = (parent, page) => {
       console.log('Getting new Page:', page)
       Vue.axios.get(`/content/${page}.md`).then(res => {
-        const docs = YAML.parseAllDocuments(res.data)
-        const header = docs[0].toJSON() || {}
-        const body = docs[1].toString() && docs[1].toString().replace('---', '')
-        parent.$emit('updateAppData', { page: { header: header, body: body } })
+        const index = res.data.indexOf('\n---')
+        const header = res.data.substring(0, index)
+        const body = res.data.substring(index).replace('---', '')
+        const doc = YAML.parseDocument(header)
+
+        parent.$emit('updateAppData', { page: { header: doc.toJSON(), body: body } })
       })
     }
   }
