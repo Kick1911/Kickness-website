@@ -19,7 +19,10 @@ export default {
 
 <style lang="less" scoped>
 #navlist {
+    height: 100%;
     ul {
+        height: 100%;
+        padding: 0px;
         list-style-type: none;
         li {
             cursor: pointer;

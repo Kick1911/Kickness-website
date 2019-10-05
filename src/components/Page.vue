@@ -33,9 +33,11 @@ export default {
 
 <style lang="less" scoped>
 #page{
-  overflow: auto;
+  height: 100%;
   & > div {
     height: 100%;
+    overflow: auto;
+    padding-right: 2%;
   }
 }
 </style>

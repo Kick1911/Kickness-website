@@ -26,12 +26,13 @@ export default {
     ul{
         overflow: hidden;
         list-style-type: none;
+        margin: 0;
         li{
             float: left;
             text-align: center;
-            padding: 14px 16px;
+            padding: 0.6%;
             text-decoration: none;
-            font-size: 17px;
+            font-size: medium;
             cursor: pointer;
             &:hover {
                 background-color: #ddd;
