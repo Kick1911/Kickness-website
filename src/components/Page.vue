@@ -1,7 +1,7 @@
 <template>
     <div id="page">
       <div v-if="this.data">
-        <component :is="data.header.template">{{data.body}}</component>
+        <component :is="data.header.template" :text="data.body"></component>
       </div>
       <div v-else>
         <h1>Still a WIP</h1>

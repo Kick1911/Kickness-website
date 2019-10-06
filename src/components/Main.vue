@@ -49,7 +49,6 @@ export default {
 
   .nav {
     box-shadow: 0px 2px 7px -2px #ccc;
-    height: 7%;
     margin-bottom: 1%;
   }
 

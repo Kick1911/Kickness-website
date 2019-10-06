@@ -1,6 +1,6 @@
 <template>
     <div>
-      <vue-markdown :source="$slots.default[0].text" ></vue-markdown>
+      <vue-markdown :source="text"></vue-markdown>
     </div>
 </template>
 
@@ -9,8 +9,16 @@ import VueMarkdown from 'vue-markdown'
 
 export default {
   name: 'Article',
+  props: ['text'],
   components: {
     VueMarkdown
+  },
+  watch: {
+    text: function () {
+      this.$nextTick(function () {
+        window.Prism.highlightAll()
+      })
+    }
   }
 }
 </script>
