@@ -1,18 +1,22 @@
 export default [
   {
     title: 'Home',
-    content: 'home'
+    component: 'Home',
+    path: '/'
   },
   {
     title: 'My Profile',
-    content: 'profile'
+    component: 'Profile',
+    path: '/profile'
   },
   {
     title: 'The Kickness Project',
-    content: 'blog/kickness'
+    component: 'Blog',
+    path: '/blog/kickness'
   },
   {
     title: 'About',
-    content: 'about'
+    component: 'About',
+    path: '/about'
   }
 ]

@@ -1,15 +1,8 @@
 <template>
     <div id="main">
         <Nav class="nav"
-            :items="nav" :onclick="$getPage" />
-        <div class="destination flex board">
-          <div class="sidebar">
-            <NavList :items="nav" :onclick="$getPage" />
-          </div>
-          <div class="content">
-            <Page :data="app.page" />
-          </div>
-      </div>
+            :items="pages" />
+        <component :is="main_content"></component>
     </div>
 </template>
 
@@ -17,14 +10,27 @@
 import Nav from './Nav'
 import Page from './Page'
 import NavList from './NavList'
+import NotFound from './NotFound'
 import pages from '../data/pages'
+import routes from '../data/routes'
 
 export default {
   name: 'Main',
   props: ['app'],
   data () {
     return {
-      nav: pages
+      page: pages[0].content,
+      pages: pages
+    }
+  },
+  computed: {
+    main_content: function () {
+      return routes[window.location.hash] || 'NotFound'
+    }
+  },
+  methods: {
+    navigate: function (val) {
+      this.page = val
     }
   },
   components: {

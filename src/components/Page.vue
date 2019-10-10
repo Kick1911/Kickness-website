@@ -1,7 +1,7 @@
 <template>
     <div id="page">
-      <div v-if="this.data">
-        <component :is="data.header.template" :text="data.body"></component>
+      <div v-if="this.body">
+        <component :is="header.template" :text="body"></component>
       </div>
       <div v-else>
         <h1>Still a WIP</h1>
@@ -10,18 +10,39 @@
 </template>
 
 <script>
-import Article from './Page/Article'
+import Article from './Template/Article'
+import YAML from 'yaml'
 
 export default {
   name: 'Page',
-  props: ['data'],
+  props: ['path'],
   components: {
     Article
   },
+  data () {
+    return {
+      header: {},
+      body: 'No Content Fetched'
+    }
+  },
   watch: {
-    data: function (val) {
+    path: function (val) {
+      console.log('Getting new Path:', val)
+      this.axios.get(`/content/${val}.md`).then(res => {
+        const index = res.data.indexOf('\n---')
+        const header = res.data.substring(0, index)
+        const body = res.data.substring(index).replace('---', '')
+        const doc = YAML.parseDocument(header)
+
+        this.header = doc.toJSON()
+        this.body = body
+      }).fail(function () {
+        this.body = 'Content could not be found.'
+      })
+    },
+    header: function (val) {
       let buffer = ''
-      const style = val.header.style || {}
+      const style = val.style || {}
       for (const k in style) {
         buffer += k + ':' + style[k] + ';'
       }
