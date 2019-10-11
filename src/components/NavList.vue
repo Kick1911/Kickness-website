@@ -1,10 +1,10 @@
 <template>
   <div id='navlist'>
     <ul>
-      <li v-for="item in this.$props.items"
+      <li v-for="item of items"
         :key="item.id"
-        v-on:click="navigate(item.content)">
-        <a>{{ item.title }}</a>
+        v-on:click="$emit('nav', item)">
+        <a>{{ no_dash(item) }}</a>
       </li>
     </ul>
   </div>
@@ -13,10 +13,10 @@
 <script>
 export default {
   name: 'navlist',
-  props: ['items', 'onclick'],
+  props: ['items', 'path_prefix'],
   methods: {
-    navigate: function (path) {
-      this.$emit('nav', path)
+    no_dash: function (val) {
+      return val.replace('-', ' ')
     }
   }
 }
@@ -35,6 +35,9 @@ export default {
       padding: 5px;
       &:hover {
         box-shadow: 1px 3px 7px 0px #ccc;
+      }
+      a {
+        text-transform: capitalize;
       }
     }
   }

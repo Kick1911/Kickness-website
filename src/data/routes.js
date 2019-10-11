@@ -2,8 +2,8 @@ import pages from '../data/pages'
 
 let routes = {}
 
-for(const x of pages){
-    routes[x.path] = x.component
+for (const i in pages) {
+  routes[pages[i].path] = i
 }
 
 export default routes

@@ -1,14 +1,18 @@
 <template>
     <div id="main">
-        <Nav class="nav"
+        <Nav class="nav" v-on:nav="navigate"
             :items="pages" />
-        <component :is="main_content"></component>
+        <component class="page" :path="page.path"
+                  :is="page.component"></component>
     </div>
 </template>
 
 <script>
 import Nav from './Nav'
 import Page from './Page'
+import Home from './Home'
+import Blog from './Blog'
+import About from './About'
 import NavList from './NavList'
 import NotFound from './NotFound'
 import pages from '../data/pages'
@@ -19,29 +23,30 @@ export default {
   props: ['app'],
   data () {
     return {
-      page: pages[0].content,
+      page: pages[routes[window.location.pathname]],
       pages: pages
     }
   },
-  computed: {
-    main_content: function () {
-      return routes[window.location.hash] || 'NotFound'
-    }
-  },
   methods: {
-    navigate: function (val) {
-      this.page = val
+    navigate: function (page) {
+      console.log('Path has changed')
+      history.pushState({ id: page.component }, page.title, page.path)
+      this.page = page
     }
   },
   components: {
     Page,
     NavList,
-    Nav
+    Nav,
+    Home,
+    Blog,
+    About,
+    NotFound
   }
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 #main {
   position: fixed;
   display: flex;
@@ -58,26 +63,8 @@ export default {
     margin-bottom: 1%;
   }
 
-  .destination {
-    height: 92%;
-  }
-
-  .flex {
-    display: flex;
-    flex-wrap: wrap;
-    .sidebar {
-      width: 35%;
-      height: 90%;
-      padding: 2%;
-      margin-right: 1%;
-      box-shadow: 6px -5px 10px -8px #ccc;
-    }
-    .content {
-      width: 56%;
-      height: 90%;
-      padding: 2%;
-      box-shadow: -7px -5px 10px -8px #ccc;
-    }
+  .page {
+    height: inherit;
   }
 }
 </style>

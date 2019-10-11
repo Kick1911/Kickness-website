@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Main :app="app" v-on:updateAppData="updateAppData" />
+    <Main />
   </div>
 </template>
 
@@ -11,24 +11,6 @@ export default {
   name: 'app',
   components: {
     Main
-  },
-  data () {
-    return {
-      app: {}
-    }
-  },
-  methods: {
-    updateAppData (obj) {
-      console.log('Update app data')
-      var temp = {}
-      for (const k in this.app) {
-        temp[k] = this.app[k]
-      }
-      for (const k in obj) {
-        temp[k] = obj[k]
-      }
-      this.app = temp
-    }
   }
 }
 </script>
