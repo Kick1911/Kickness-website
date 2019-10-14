@@ -1,10 +1,18 @@
 <template>
-  <div id='about'></div>
+  <div id='about'>
+    <Page :path="path" />
+  </div>
 </template>
 
 <script>
+import Page from './Page'
+
 export default {
-  name: 'about'
+  name: 'about',
+  props: ['path'],
+  components: {
+    Page
+  }
 }
 </script>
 

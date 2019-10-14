@@ -45,7 +45,7 @@ export default {
     },
     header: function (val) {
       let buffer = ''
-      if(!val){ return }
+      if (!val) { return }
       const style = val.style || {}
       for (const k in style) {
         buffer += k + ':' + style[k] + ';'

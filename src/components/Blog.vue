@@ -14,7 +14,7 @@
 <script>
 import NavList from './NavList'
 import Page from './Page'
-import blogs from '../data/blogs'
+import blogs from '../assets/maps/blogs'
 
 export default {
   name: 'blog',
