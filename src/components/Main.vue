@@ -3,17 +3,17 @@
         <Nav class="nav" v-on:nav="navigate"
             :items="pages" />
         <component class="page" :path="page.path"
+                  v-on:nav="navigate"
                   :is="page.component"></component>
     </div>
 </template>
 
 <script>
 import Nav from './Nav'
-import Page from './Page'
-import Home from './Home'
-import Blog from './Blog'
-import About from './About'
-import NavList from './NavList'
+import Home from './Pages/Home'
+import Blog from './Pages/Blog'
+import About from './Pages/About'
+import Profile from './Pages/Profile'
 import NotFound from './NotFound'
 import pages from '../data/pages'
 import routes from '../data/routes'
@@ -35,12 +35,11 @@ export default {
     }
   },
   components: {
-    Page,
-    NavList,
     Nav,
     Home,
     Blog,
     About,
+    Profile,
     NotFound
   }
 }

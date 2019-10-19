@@ -12,9 +12,9 @@
 </template>
 
 <script>
-import NavList from './NavList'
-import Page from './Page'
-import blogs from '../assets/maps/blogs'
+import NavList from '../NavList'
+import Page from '../Page'
+import blogs from '../../assets/maps/blog'
 
 export default {
   name: 'blog',
@@ -25,9 +25,19 @@ export default {
       blog: this.$props.path.replace('/blog/', '')
     }
   },
+  watch: {
+    blog: function (val) {
+      const page = {
+        title: val,
+        component: 'Blog',
+        path: '/blog/' + val
+      }
+      this.$emit('nav', page)
+    }
+  },
   computed: {
     get_path: function () {
-      return 'blog/' + this.blog
+      return 'blog/' + this.blog || 'index'
     }
   },
   components: {
