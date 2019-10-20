@@ -1,1 +1,1 @@
-/* eslint-disable */ export default ["kickness","this-website"]
+/* eslint-disable */ export default ["kickness"]

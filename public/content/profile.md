@@ -41,40 +41,43 @@ programming. Also, I am a fast learner within the context of programming
 - De Kuilen High School, Kuils River: National Senior Certificate (2008 – 2013)
 - University of the Western Cape, Bellville: Bachelor of Science Computer Science (2014 - 2016)
 
-Academic Achievements:
+*Academic Achievements:*
 > Certificate of Academic Excellence (2014)
 > Certificate of Academic Excellence (2014)
 > SAS Practical Course Work STA211/221 (2015)
 > Golden Key International Honour Society (2015)
 
-Competition: CSIR CHPC Competition, 3^rd^ place (2015)
+*Competition:*
+> CSIR CHPC Competition, 3^rd^ place (2015)
 
 ### Work Experience: SARS, Pretoria (2017 - 2019)
-Job Description: (Graduate) Backend Software Development
+*Job Description:* (Graduate) Backend Software Development
 
-Duties: Manage Git repository, develop the backend in Node.js, deploy to server
+*Duties:*
+> Manage Git repository, develop the backend in Node.js, deploy to server
 
-Backend Software Skills Developed:
+*Backend Software Skills Developed:*
 > Node.js, Node.js unit test (Mocha), Java servlets (little experience), RabbitMQ, RESTful, MongoDB
 
-Frontend Software Skills Developed:
+*Frontend Software Skills Developed:*
 > HTML, CSS, Javascript, JQuery, Bootstrap
 
-Version Control:
+*Version Control:*
 > Git
 
 ### Work Experience: Sudonum, Cape Town (2019 - present)
-Job Description: Software Developer
+*Job Description:* Software Developer
 
-Duties: Maintain code, add new features, learn a lot
+*Duties:*
+> Maintain code, add new features, learn a lot
 
-Skills Developed:
+*Skills Developed:*
 > Python, Django, ReactJs, PostgresDB
 
-Gained understanding of:
+*Gained understanding of:*
 > Telecommunication, Freeswitch, FusionPBX, SIP
 
-Version Control:
+*Version Control:*
 > Git
 
 ### Interests

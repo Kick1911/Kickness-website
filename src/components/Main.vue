@@ -57,12 +57,12 @@ export default {
   right: 0;
   bottom: 0;
 
-  .nav {
+  & > .nav {
     box-shadow: 0px 2px 7px -2px #ccc;
     margin-bottom: 1%;
   }
 
-  .page {
+  & > .page {
     height: inherit;
   }
 }

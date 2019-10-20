@@ -10,7 +10,7 @@ export default [
     path: '/profile'
   },
   {
-    title: 'The Kickness Project',
+    title: 'Blogs',
     component: 'Blog',
     path: '/blog/kickness'
   },
