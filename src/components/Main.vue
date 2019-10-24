@@ -64,6 +64,7 @@ export default {
 
   & > .page {
     height: inherit;
+    min-height: 300px;
   }
 }
 </style>

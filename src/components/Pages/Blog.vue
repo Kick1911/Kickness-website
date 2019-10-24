@@ -56,16 +56,21 @@ export default {
     flex-wrap: wrap;
     .sidebar {
       width: 35%;
-      height: 90%;
-      padding: 2%;
+      height: inherit;
       margin-right: 1%;
       box-shadow: 6px -5px 10px -8px #ccc;
+      & > * {
+        margin: 2%;
+      }
     }
     .content {
-      width: 56%;
-      height: 90%;
-      padding: 2%;
+      width: 64%;
+      height: inherit;
       box-shadow: -7px -5px 10px -8px #ccc;
+      & > * {
+        margin-right: 2%;
+        margin-left: 2%;
+      }
     }
   }
 }

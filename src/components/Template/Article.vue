@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id='article'>
       <vue-markdown :source="text"></vue-markdown>
     </div>
 </template>
@@ -8,7 +8,7 @@
 import VueMarkdown from 'vue-markdown'
 
 export default {
-  name: 'Article',
+  name: 'article',
   props: ['text'],
   components: {
     VueMarkdown
@@ -22,3 +22,9 @@ export default {
   }
 }
 </script>
+
+<style lang="less" scoped>
+#article {
+  margin-right: 1%;
+}
+</style>

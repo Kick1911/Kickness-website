@@ -58,11 +58,10 @@ export default {
 
 <style lang="less" scoped>
 #page{
-  height: 100%;
+  height: inherit;
   & > div {
-    height: 100%;
+    height: inherit;
     overflow: auto;
-    padding-right: 2%;
   }
 }
 </style>

@@ -12,7 +12,7 @@ export default [
   {
     title: 'Blogs',
     component: 'Blog',
-    path: '/blog/kickness'
+    path: '/blog/the-kickness-project'
   },
   {
     title: 'About',

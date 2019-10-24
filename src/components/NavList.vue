@@ -16,7 +16,7 @@ export default {
   props: ['items', 'path_prefix'],
   methods: {
     no_dash: function (val) {
-      return val.replace('-', ' ')
+      return val.replace(/-/g, ' ')
     }
   }
 }
@@ -24,9 +24,7 @@ export default {
 
 <style lang="less" scoped>
 #navlist {
-  height: 100%;
   ul {
-    height: 100%;
     padding: 0px;
     list-style-type: none;
     li {
