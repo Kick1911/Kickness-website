@@ -30,7 +30,7 @@ export default {
       immediate: true,
       handler (val) {
         console.log('Getting new Path:', val)
-        this.axios.get(`/content/${val}.md`).then(res => {
+        this.axios.get(`/content${val}.md`).then(res => {
           const index = res.data.indexOf('\n---')
           const header = res.data.substring(0, index)
           const body = res.data.substring(index).replace('---', '')

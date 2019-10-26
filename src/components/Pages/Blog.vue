@@ -37,7 +37,7 @@ export default {
   },
   computed: {
     get_path: function () {
-      return 'blog/' + this.blog || 'index'
+      return '/blog/' + this.blog || 'index'
     }
   },
   components: {
