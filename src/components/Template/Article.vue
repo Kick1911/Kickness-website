@@ -1,17 +1,19 @@
 <template>
     <div id='article'>
-      <vue-markdown :source="text"></vue-markdown>
+      <div v-html="compiledMarkdown"></div>
     </div>
 </template>
 
 <script>
-import VueMarkdown from 'vue-markdown'
+import marked from 'marked'
 
 export default {
   name: 'article',
   props: ['text'],
-  components: {
-    VueMarkdown
+  computed: {
+    compiledMarkdown () {
+      return marked(this.text)
+    }
   },
   watch: {
     text: function () {
