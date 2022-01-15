@@ -14,7 +14,7 @@
     "bootstrap": "^4.3.1",
     "chokidar": "^3.2.1",
     "core-js": "^3.3.0",
-    "marked": "^3.0.4",
+    "marked": "^4.0.10",
     "vue": "^2.6.10",
     "vue-axios": "^2.1.4",
     "vue-prism": "^1.0.5",
